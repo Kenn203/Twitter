@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,10 +28,23 @@ import okhttp3.Headers;
 
     EditText etCompose;
     Button btnTweet;
+    MenuItem miActionProgressItem;
 
     TwitterClient client;
 
-    @Override
+     @Override
+     public boolean onPrepareOptionsMenu(Menu menu) {
+         miActionProgressItem = menu.findItem(R.id.miActionProgress);
+         return super.onPrepareOptionsMenu(menu);
+     }
+
+     @Override
+     public boolean onCreateOptionsMenu(Menu menu) {
+         getMenuInflater().inflate(R.menu.progress_bar,menu);
+         return super.onCreateOptionsMenu(menu);
+     }
+
+     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_compose);
@@ -42,6 +57,7 @@ import okhttp3.Headers;
         btnTweet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                miActionProgressItem.setVisible(true);
                 String tweetContent = etCompose.getText().toString();
                 if (tweetContent.isEmpty()){
                     Toast.makeText(ComposeActivity.this, "Sorry tweet is empty", Toast.LENGTH_LONG).show();
@@ -62,9 +78,11 @@ import okhttp3.Headers;
                             Intent intent = new Intent();
                             intent.putExtra("tweet", Parcels.wrap(tweet));
                             setResult(RESULT_OK, intent);
+                            miActionProgressItem.setVisible(false);
                             finish();
                         }catch (JSONException e){
                             e.printStackTrace();
+                            miActionProgressItem.setVisible(false);
                         }
 
                     }
