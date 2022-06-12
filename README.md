@@ -11,7 +11,7 @@ The following **required** functionality is completed:
 * [x] User can **sign in to Twitter** using OAuth login
 * [x] User can **view tweets from their home timeline**
   * [x] User is displayed the username, name, and body for each tweet
-  * [ ] User is displayed the [relative timestamp](https://gist.github.com/nesquena/f786232f5ef72f6e10a7) for each tweet "8m", "7h"
+  * [x] User is displayed the [relative timestamp](https://gist.github.com/nesquena/f786232f5ef72f6e10a7) for each tweet "8m", "7h"
 * [x] User can ***log out of the application** by tapping on a logout button
 * [x] User can **compose and post a new tweet**
   * [x] User can click a “Compose” icon in the Action Bar on the top right
@@ -24,8 +24,8 @@ The following **required** functionality is completed:
 
 The following **optional** features are implemented:
 
-* [ ] User is using **"Twitter branded" colors and styles**
-* [ ] User sees an **indeterminate progress indicator** when any background or network task is happening
+* [x] User is using **"Twitter branded" colors and styles**
+* [x] User sees an **indeterminate progress indicator** when any background or network task is happening
 * [ ] User can **select "reply" from home timeline to respond to a tweet**
   * [ ] User that wrote the original tweet is **automatically "@" replied in compose**
 * [ ] User can tap a tweet to **open a detailed tweet view**
@@ -47,7 +47,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='Kapture 2022-06-10 at 15.45.19.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [Kap](https://getkap.co/).
 
